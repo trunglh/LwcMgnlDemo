@@ -1,0 +1,34 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://magnoliacms-dev-ed.lightning.force.com/lightning/lightning.out.js"></script>
+    </head>
+    <body>
+        <h1>My External Page</h1>
+        <div id="lightning-out"></div>
+        <script>
+            const appName = 'c:GlobalAlertApp';
+            const componentName = 'c:GlobalAlert';
+            const componentAtribute = {
+
+            };
+
+
+            $Lightning.use(
+                appName, 
+                function () { 
+                    $Lightning.createComponent(
+                        componentName,
+                        componentAtribute, 
+                        'lightning-out', 
+                        function (cmp) { 
+                            console.log('The component was created.');
+                        }
+                    );
+                },
+                'https://magnoliacms-dev-ed.lightning.force.com' // Experience Cloud site endpoint
+            );
+        </script>
+    </body>
+</html>
